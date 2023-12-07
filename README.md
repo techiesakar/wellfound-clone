@@ -1,3 +1,16 @@
+# Wellfound Clone
+
+A sleek and responsive web application crafted with Next.js, Tailwind CSS, and Shadcn. Seamlessly blending performance and aesthetics for a delightful user experience. This project involved no backend feature.
+
+## Tech Stack
+
+**Client:** NextJs, TailwindCSS, Shadcn
+
+## Features
+
+- Light/dark mode toggle
+- Responsive
+
 ## Run Locally
 
 Clone the project
