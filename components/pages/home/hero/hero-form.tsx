@@ -79,7 +79,7 @@ export const HeroForm = () => {
             className="hover:text-active-red text-base"
             asChild
           >
-            <Link href="/">Log in</Link>
+            <Link href="/login">Log in</Link>
           </Button>
         </p>
       </Form>

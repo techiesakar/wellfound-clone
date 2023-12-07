@@ -24,11 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col ${graphik.className}`}>
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className={`flex flex-col ${graphik.className}`}>{children}</body>
     </html>
   );
 }
