@@ -5,10 +5,10 @@ import { FaInstagram, FaTwitter } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 py-20">
+    <footer className="border-t border-gray-200 lg:py-20 py-14">
       <div className="site-container flex lg:flex-row flex-col gap-10 justify-between">
         <div className="">
-          <Logo className="w-[200px] mb-5" />
+          <Logo className="lg:w-[180px] w-[140px] mb-5" />
           <ul className="flex items-center gap-3 ">
             <li className="text-2xl">
               <FaTwitter />

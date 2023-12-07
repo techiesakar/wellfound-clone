@@ -36,7 +36,7 @@ export const HeroForm = () => {
     console.log(values);
   };
   return (
-    <div className="border border-gray-100 p-10 rounded-sm md:max-w-[520px] max-w-full w-full space-y-3">
+    <div className="sm:border border-gray-100 sm:p-10 rounded-sm md:max-w-[520px] max-w-full w-full space-y-3">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

@@ -29,7 +29,7 @@ export const Header = () => {
     <header className="relative  bg-white border-b gray-50 lg:py-0 py-5">
       <div className="site-container flex justify-between   items-center">
         <div className="relative  bg-white">
-          <Logo className="w-[180px]" />
+          <Logo className="lg:w-[180px] w-[140px]" />
         </div>
         <div
           className={cn(
@@ -39,7 +39,7 @@ export const Header = () => {
         >
           <Menu
             onClick={() => setIsmenuOpen(!isMenuOpen)}
-            className="h-8 w-8 cursor-pointer"
+            className="sm:h-8 sm:w-8 h-6 w-6 cursor-pointer"
           />
         </div>
         <ul

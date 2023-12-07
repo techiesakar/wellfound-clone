@@ -12,7 +12,7 @@ export const HomeHero = () => {
             AngelList Talent is now Wellfound
           </h1>
           <p>Where startups and job seekers connect.</p>
-          <div className="flex gap-4">
+          <div className="flex sm:flex-row flex-col gap-4">
             <Button asChild className="rounded-xl" variant="primary" size="lg">
               <Link href="/">Find your next hire</Link>
             </Button>
