@@ -47,7 +47,7 @@ export const LoginForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
           <div className="space-y-5">
-            <Logo className="max-w-[120px]" />
+            <Logo className="max-w-[160px]" />
             <h1 className="text-3xl font-semibold">Login</h1>
             <p className="text-base font-light">Find the job made for you!</p>
             <Button

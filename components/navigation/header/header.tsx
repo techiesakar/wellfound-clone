@@ -61,7 +61,7 @@ export const Header = () => {
 
           <li>
             <Button asChild variant="outline" className="rounded-xl">
-              <Link href="/">Login</Link>
+              <Link href="/login">Login</Link>
             </Button>
           </li>
           <li>
