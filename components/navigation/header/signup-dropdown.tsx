@@ -14,10 +14,10 @@ export const SignUpDropdown = ({ children }: { children: React.ReactNode }) => {
         sideOffset={25}
         className="w-80 flex flex-col font-medium rounded-md gap-4"
       >
-        <Link href="/" className="hover:text-active-red">
+        <Link href="/jobs/signup" className="hover:text-active-red">
           I'm looking for a job
         </Link>
-        <Link href="/" className="hover:text-active-red">
+        <Link href="/recruit/signup" className="hover:text-active-red">
           I'm looking for a candidates
         </Link>
       </PopoverContent>

@@ -30,7 +30,7 @@ export const TestimonialSection = () => {
           <div className="uppercase text-lg font-semibold tracking-wider mb-4">
             DON'T JUST TAKE IT FROM US
           </div>
-          <h2 className="text-4xl font-bold">From our users</h2>
+          <h2 className="text-4xl font-semibold">From our users</h2>
         </div>
         {data.map((item) => (
           <div
@@ -40,7 +40,7 @@ export const TestimonialSection = () => {
             <div className="text-3xl text-gray-900">
               <FaQuoteLeft />
             </div>
-            <p className="">{item.testimony}</p>
+            <p className="font-medium text-base">{item.testimony}</p>
           </div>
         ))}
       </div>

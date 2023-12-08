@@ -66,14 +66,13 @@ export const Header = () => {
           </li>
           <li>
             <SignUpDropdown>
-              <Button asChild className="rounded-xl" variant="primary">
-                <Link href="/">Sign up</Link>
+              <Button className="rounded-xl" variant="primary">
+                Sign up
               </Button>
             </SignUpDropdown>
           </li>
         </ul>
       </div>
-      {/* <SignUpType /> */}
     </header>
   );
 };

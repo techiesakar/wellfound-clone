@@ -1,24 +1,24 @@
-import { LoginForm } from "@/components/pages/login/login-form";
+import { SignUpForm } from "@/components/common/forms/signup-form";
 import Image from "next/image";
 import React from "react";
 
-const LoginPage = () => {
+const SignupPage = () => {
   return (
     <main>
       <div className="flex h-screen py-20 lg:py-0 lg:flex-row flex-col lg:px-0 px-4 lg:justify-between lg:gap-0 gap-14 justify-center  w-full lg:overflow-hidden">
         {/* Left */}
-        <div className="lg:w-[50%]  lg:order-1 order-2 flex justify-end xl:pr-[200px] lg:pr-[100px] lg:pl-[100px] items-center ">
-          <LoginForm />
+        <div className="lg:w-[50%]  lg:order-2 order-2 flex justify-end xl:pr-[200px] lg:pr-[100px] lg:pl-[100px] items-center ">
+          <SignUpForm />
         </div>
         {/* Right */}
-        <div className="lg:w-[40%] w-full lg:order-2 flex flex-col  relative">
+        <div className="lg:w-[40%] w-full lg:order-1 flex flex-col  relative">
           <div className="lg:block hidden">
             <Image
-              src="/login-banner.png"
+              src="/signup-banner.png"
               width={1000}
               height={1000}
               quality={100}
-              className="w-full object-contain"
+              className="w-full  object-contain"
               alt="login banner"
             />
           </div>
@@ -40,4 +40,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;

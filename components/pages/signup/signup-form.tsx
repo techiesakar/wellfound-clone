@@ -15,8 +15,13 @@ import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { z } from "zod";
 
-export const LoginForm = () => {
+export const SignUpForm = () => {
   const formSchema = z.object({
+    fullname: z
+      .string({
+        required_error: "Name is required",
+      })
+      .min(3),
     email: z
       .string({
         required_error: "Email is required",
@@ -28,12 +33,13 @@ export const LoginForm = () => {
       .string({
         required_error: "Password is required",
       })
-      .min(4),
+      .min(6),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      fullname: "",
       email: "",
       password: "",
     },
@@ -48,30 +54,44 @@ export const LoginForm = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
           <div className="space-y-5">
             <Logo className="max-w-[160px]" />
-            <h1 className="text-3xl font-semibold">Login</h1>
-            <p className="text-base font-light">Find the job made for you!</p>
+            <h1 className="text-3xl font-semibold">Create Account</h1>
+            <p className="text-base font-light">Find your next opportunity!</p>
             <Button
               type="button"
               size="lg"
               variant="outline"
               className="flex gap-4 items-center w-full"
             >
-              <FaGoogle /> Log in with Google
+              <FaGoogle /> Sign up with Google
             </Button>
           </div>
 
           <div className="flex justify-between items-center">
             <span className="border-t border-gray-400 h-1 flex-1"></span>
-            <p className=" px-6"> or Login with Email</p>
+            <p className=" px-6"> or Sign up with Email</p>
             <span className="border-t border-gray-400 h-1 flex-1"></span>
           </div>
+
+          <FormField
+            control={form.control}
+            name="fullname"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Full Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="enter text" {...field} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input placeholder="mail@website.com" {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -81,35 +101,32 @@ export const LoginForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
+                <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" {...field} />
+                  <Input placeholder="min 6 character" {...field} />
                 </FormControl>
               </FormItem>
             )}
           />
 
-          <p className="text-right">
-            <Button
-              variant="link"
-              className="hover:text-active-red text-base underline  "
-              asChild
-            >
-              <Link href="/login">Forget password</Link>
-            </Button>
-          </p>
-
           <Button type="submit" size="lg" variant="primary" className="w-full">
-            Log in
+            Sign up
           </Button>
 
+          <p className="text-center text-sm font-light">
+            By continuing you accept our standard
+            <Link href="/">terms and conditions</Link> and our
+            <Link href="/">privacy policy</Link>
+          </p>
+
           <p className="text-center">
-            Not registered?
+            Already have an account?
             <Button
               variant="link"
               className="hover:text-active-red text-base"
               asChild
             >
-              <Link href="/jobs/signup">Create an account</Link>
+              <Link href="/login">Login</Link>
             </Button>
           </p>
         </form>
