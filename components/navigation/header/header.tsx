@@ -14,7 +14,7 @@ const NavData = [
   },
   {
     name: "for job seekers",
-    path: "/",
+    path: "/candidates/overview",
   },
   {
     name: "for companies",

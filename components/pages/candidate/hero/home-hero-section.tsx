@@ -4,26 +4,26 @@ import { HeroSection } from "@/components/common/hero-section/hero-section";
 export const ButtonsProps: ButtonType[] = [
   {
     id: "1",
-    label: "Find your next hire",
+    label: "Create your profile",
     path: "/",
     type: "primary",
     className: "rounded-xl font-medium",
   },
   {
     id: "2",
-    label: "Find your next job",
+    label: "Browse jobs",
     path: "/",
     type: "outline",
     className: "rounded-xl font-medium",
   },
 ];
 
-export const HomeHeroSection = () => {
+export const CandidateHeroSection = () => {
   return (
     <div>
       <HeroSection
-        title="AngelList Talent is now Wellfound"
-        content="Where startups and job seekers connect."
+        title="Find the job made for you"
+        content="We make it easy to find your dream job - regardless of your location. Browse over 100,000 jobs from top companies to fast-growing startups."
         buttons={ButtonsProps}
       />
     </div>

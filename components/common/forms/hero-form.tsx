@@ -36,43 +36,48 @@ export const HeroForm = () => {
     console.log(values);
   };
   return (
-    <div className="sm:border border-gray-100 sm:p-10 rounded-sm md:max-w-[520px] max-w-full w-full space-y-3">
+    <div className="sm:border p-6 border border-gray-300  rounded-sm  max-w-full w-full">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full flex gap-5 flex-col "
+          className="w-full flex lg:flex-row flex-col justify-between gap-4 items-center"
         >
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
+              <FormItem className="lg:flex-1 w-full items-center">
+                {/* <FormLabel>Email</FormLabel> */}
                 <FormControl>
                   <Input
                     placeholder="Your email"
                     {...field}
-                    className="placeholder:text-gray-400 placeholder:font-medium"
+                    className="placeholder:text-gray-400 rounded-xl px-4 placeholder:font-medium text-lg font-light py-6"
                   />
                 </FormControl>
               </FormItem>
             )}
           />
-          <Button type="submit" size="lg" variant="primary">
+          <Button
+            type="submit"
+            size="lg"
+            variant="primary"
+            className="py-6 lg:w-auto w-full"
+          >
             Candidate sign up
           </Button>
 
-          <p className="text-center">or</p>
+          <p className="text-center font-light">or</p>
           <Button
             type="button"
             size="lg"
             variant="outline"
-            className="flex gap-4 items-center"
+            className="flex gap-4 items-center py-6 lg:w-auto w-full"
           >
             <FaGoogle /> Sign up with Google
           </Button>
         </form>
-        <p className="text-center">
+        {/* <p className="text-center">
           Already have an account ?
           <Button
             variant="link"
@@ -81,7 +86,7 @@ export const HeroForm = () => {
           >
             <Link href="/login">Log in</Link>
           </Button>
-        </p>
+        </p> */}
       </Form>
     </div>
   );
