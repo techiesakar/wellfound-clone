@@ -1,20 +1,27 @@
-import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/navigation/header/header";
-import { Footer } from "@/components/navigation/footer/footer";
-import { graphik } from "./lib/fonts";
+import { siteConfig } from "./config/site";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const rubik = Rubik({
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+const inter = Inter({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Wellfound",
-  description: "Find your dream job today",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: [
+    {
+      url: "",
+      href: "",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -24,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col ${graphik.className}`}>{children}</body>
+      <body className={`flex flex-col ${inter.className}`}>{children}</body>
     </html>
   );
 }

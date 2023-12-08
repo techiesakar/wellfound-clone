@@ -8,7 +8,7 @@ export const HomeHero = () => {
       <div className="site-container grid lg:grid-cols-2 grid-cols-1 items-center gap-10 justify-between">
         {/* Left */}
         <div className="lg:space-y-7 space-y-6">
-          <h1 className="lg:text-6xl text-3xl leading-snug font-semibold">
+          <h1 className="lg:text-5xl text-3xl lg:leading-normal font-bold">
             AngelList Talent is now Wellfound
           </h1>
           <p>Where startups and job seekers connect.</p>
