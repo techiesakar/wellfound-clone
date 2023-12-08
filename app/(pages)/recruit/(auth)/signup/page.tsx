@@ -2,7 +2,7 @@ import { SignUpForm } from "@/components/common/forms/signup-form";
 import { BsPatchCheck } from "react-icons/bs";
 
 import React from "react";
-export const data = [
+const data = [
   {
     id: "1",
     title: "Post your job and source candidates for FREE",

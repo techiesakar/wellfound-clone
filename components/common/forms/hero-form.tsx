@@ -13,7 +13,6 @@ import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FaGoogle } from "react-icons/fa";
-import Link from "next/link";
 
 export const HeroForm = () => {
   const formSchema = z.object({
@@ -47,7 +46,6 @@ export const HeroForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem className="lg:flex-1 w-full items-center">
-                {/* <FormLabel>Email</FormLabel> */}
                 <FormControl>
                   <Input
                     placeholder="Your email"

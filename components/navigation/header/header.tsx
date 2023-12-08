@@ -1,28 +1,21 @@
 "use client";
 import React, { useState } from "react";
-import { Logo } from "../logo";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 import { cn } from "@/app/lib/utils";
-import { SignUpDropdown } from "./signup-dropdown";
+import Link from "next/link";
+import { Logo } from "../logo";
+import { Menu } from "lucide-react";
 
-const NavData = [
-  {
-    name: "discover",
-    path: "/",
-  },
-  {
-    name: "for job seekers",
-    path: "/candidates/overview",
-  },
-  {
-    name: "for companies",
-    path: "/",
-  },
-];
+type HeaderProps = {
+  navitems: {
+    id: string;
+    title: string;
+    path: string;
+  }[];
 
-export const Header = () => {
+  buttons?: React.ReactNode;
+};
+
+export const Header = ({ navitems, buttons }: HeaderProps) => {
   const [isMenuOpen, setIsmenuOpen] = useState(false);
 
   return (
@@ -44,33 +37,24 @@ export const Header = () => {
         </div>
         <ul
           className={cn(
-            "flex lg:flex-row transition-all duration-300 py-10 lg:py-0 -top-full lg:top-0  lg:h-24 h-full flex-col z-50 justify-start lg:items-center lg:justify-end gap-6 lg:relative fixed w-full bg-white",
-            isMenuOpen && "top-24 "
+            "flex lg:flex-row flex-col px-10 lg:px-0 transition-all  lg:h-24 h-screen lg:items-center py-10 lg:justify-end gap-6 lg:relative fixed top-0 -left-full lg:left-0  w-full bg-white",
+            isMenuOpen && "left-0"
           )}
         >
-          {NavData.map((item) => (
-            <li key={item.name}>
+          {navitems.map((item) => (
+            <li key={item.title}>
               <Link
                 href={item.path}
                 className="capitalize transition-all  duration-300 hover:border-link-touch hover:text-link-touch hover:border-b py-3"
               >
-                {item.name}
+                {item.title}
               </Link>
             </li>
           ))}
 
-          <li>
-            <Button asChild variant="outline" className="rounded-xl">
-              <Link href="/login">Login</Link>
-            </Button>
-          </li>
-          <li>
-            <SignUpDropdown>
-              <Button className="rounded-xl" variant="primary">
-                Sign up
-              </Button>
-            </SignUpDropdown>
-          </li>
+          {buttons && (
+            <div className="flex lg:flex-row flex-col gap-3">{buttons}</div>
+          )}
         </ul>
       </div>
     </header>
