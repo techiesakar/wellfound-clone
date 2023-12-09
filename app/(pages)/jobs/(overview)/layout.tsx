@@ -1,12 +1,10 @@
 import Link from "next/link";
-
 import { Footer } from "@/components/navigation/footer/footer";
 import { Header } from "@/components/navigation/header/header";
-import { SignUpDropdown } from "@/components/navigation/header/signup-dropdown";
 
 import { Button } from "@/components/ui/button";
 
-const HomeLayout = ({ children }: { children: React.ReactNode }) => {
+const JobPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <Header navitems={NavItems} buttons={<Buttons />} />
@@ -15,7 +13,6 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
 const NavItems = [
   {
     id: "1",
@@ -24,13 +21,18 @@ const NavItems = [
   },
   {
     id: "2",
-    title: "For Job Seekers",
-    path: "/candidates/overview",
+    title: "Overview",
+    path: "/recruit/overview",
   },
   {
     id: "3",
-    title: "For Companies",
-    path: "/recruit/overview",
+    title: "Pricing",
+    path: "/recruit/pricing",
+  },
+  {
+    id: "4",
+    title: "For Job Seekers",
+    path: "/candidates/overview",
   },
 ];
 
@@ -41,13 +43,10 @@ const Buttons = () => {
         <Link href="/login">Login</Link>
       </Button>
 
-      <SignUpDropdown>
-        <Button className="rounded-xl w-fu" variant="primary">
-          Sign up
-        </Button>
-      </SignUpDropdown>
+      <Button className="rounded-xl w-ful" variant="primary">
+        <Link href="/recruit/signup"> Sign up</Link>
+      </Button>
     </>
   );
 };
-
-export default HomeLayout;
+export default JobPageLayout;

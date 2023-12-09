@@ -5,14 +5,14 @@ export const ButtonsProps: ButtonType[] = [
   {
     id: "1",
     label: "Create your profile",
-    path: "/",
+    path: "/jobs/signup",
     type: "primary",
     className: "rounded-xl font-medium",
   },
   {
     id: "2",
     label: "Browse jobs",
-    path: "/",
+    path: "/jobs",
     type: "outline",
     className: "rounded-xl font-medium",
   },

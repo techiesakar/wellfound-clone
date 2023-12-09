@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/app/lib/utils";
 import Link from "next/link";
 import { Logo } from "../logo";
@@ -18,6 +18,18 @@ type HeaderProps = {
 export const Header = ({ navitems, buttons }: HeaderProps) => {
   const [isMenuOpen, setIsmenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isMenuOpen]);
+
+  const handleMenuClick = () => {
+    setIsmenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="relative  bg-white border-b gray-50 lg:py-0 py-5">
       <div className="site-container flex justify-between   items-center">
@@ -31,7 +43,7 @@ export const Header = ({ navitems, buttons }: HeaderProps) => {
           )}
         >
           <Menu
-            onClick={() => setIsmenuOpen(!isMenuOpen)}
+            onClick={handleMenuClick}
             className="sm:h-8 sm:w-8 h-6 w-6 cursor-pointer"
           />
         </div>

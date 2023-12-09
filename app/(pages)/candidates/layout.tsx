@@ -19,32 +19,32 @@ const NavItems = [
   {
     id: "1",
     title: "Discover",
-    path: "/",
+    path: "/discover",
   },
   {
     id: "2",
     title: "Overview",
-    path: "/",
+    path: "/candidates/overview",
   },
   {
     id: "3",
     title: "Jobs",
-    path: "/",
+    path: "/jobs",
   },
   {
     id: "4",
     title: "Featured",
-    path: "/",
+    path: "/candidates/featured",
   },
   {
     id: "5",
     title: "Remote",
-    path: "/",
+    path: "/candidates/remote",
   },
   {
     id: "6",
     title: "For Companies",
-    path: "/",
+    path: "/recruit/overview",
   },
 ];
 

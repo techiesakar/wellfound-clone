@@ -11,11 +11,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { z } from "zod";
 
 export const SignUpForm = () => {
+  const searchParams = useSearchParams();
+  console.log(searchParams.get("email"));
+
   const formSchema = z.object({
     fullname: z
       .string({
@@ -40,7 +44,7 @@ export const SignUpForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullname: "",
-      email: "",
+      email: searchParams.get("email") || "",
       password: "",
     },
   });

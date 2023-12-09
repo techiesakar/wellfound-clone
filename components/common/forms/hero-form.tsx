@@ -2,19 +2,20 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FaGoogle } from "react-icons/fa";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback } from "react";
 
 export const HeroForm = () => {
+  const searchParams = useSearchParams();
+  console.log(searchParams.getAll);
+
+  const router = useRouter();
+
   const formSchema = z.object({
     email: z
       .string({
@@ -27,12 +28,25 @@ export const HeroForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
+      email: searchParams.get("email") || "",
     },
   });
 
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams]
+  );
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
+
+    router.push(
+      "/jobs/signup" + "?" + createQueryString("email", values.email)
+    );
   };
   return (
     <div className="sm:border p-6 border border-gray-300  rounded-sm  max-w-full w-full">
@@ -75,16 +89,6 @@ export const HeroForm = () => {
             <FaGoogle /> Sign up with Google
           </Button>
         </form>
-        {/* <p className="text-center">
-          Already have an account ?
-          <Button
-            variant="link"
-            className="hover:text-active-red text-base"
-            asChild
-          >
-            <Link href="/login">Log in</Link>
-          </Button>
-        </p> */}
       </Form>
     </div>
   );
